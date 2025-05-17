@@ -1,0 +1,24 @@
+
+  
+  [
+    {
+      "id": 1,
+      "image": "art7.png",
+      "heading": "Traditional Arts",
+      "text": "Preserving ancient artistic traditions through modern expressions."
+    },
+    {
+      "id": 2,
+      "image": "art8.png",
+      "heading": "Performing Arts",
+      "text": "Showcasing the beauty of traditional dance and music."
+    },
+    {
+      "id": 3,
+      "image": "art9.png",
+      "heading": "Cultural Hertiage",
+      "text": "Protecting and celebrating our rich cultural legacy."
+    }
+
+  ]
+  

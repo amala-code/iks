@@ -1,0 +1,150 @@
+/* Navbar Container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", serif;
+  position: relative; /* Add this to contain the absolute positioned nav-links */
+}
+
+/* Logo and Title */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-title h1 {
+  font-size: 18px;
+  color: #0a4b3e;
+  margin: 0;
+}
+
+.nav-title p {
+  font-size: 12px;
+  color: gray;
+  margin: 0;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* Underline on Hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #c53030; /* Adjust to match your theme */
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.join-btn {
+  background: #c5a572;
+  border: 1px solid #c5a572;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.join-btn:hover {
+  background-color: white;
+  border: 1px solid #c5a572;
+  color: #c5a572;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    right: 0;
+    background: white;
+    width: 100%; /* Full width */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  .nav-links.open {
+    display: flex; /* Show when open */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+}
+/* Active Link Style */
+.nav-links a.active {
+  color: #c53030; 
+  font-weight: bold; 
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1); 
+}
+
+/* Navbar.css */
+
+/* Join Us Button Styles */
+.join-btn {
+  background: #c5a572;
+  border: 1px solid #c5a572;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.join-btn:hover {
+  background-color: white;
+  border: 1px solid #c5a572;
+  color: #c5a572;
+}

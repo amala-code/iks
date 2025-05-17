@@ -1,0 +1,193 @@
+.art_mainContainer {
+    font-family: "Roboto", serif;
+  }
+  .art_headContainer {
+    position: relative;
+    background: url("../../Images/art.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+  .art_headContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  .art_headContnainer_text {
+    align-items: center;
+    justify-content: center;
+  }
+  .art_heading {
+    font-size: 48px;
+  }
+  .art_subhead {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .art_subContainer1{
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+  .art_sunContainer1_textContainer{
+    padding: 30px;
+  }
+  .art_subContainer_headText{
+    line-height: 36px;
+    font-size: 30px;
+    color: #0A4B3E;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .art_subcontainer1_text{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: justify;
+  }
+  .art_button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .art_button{
+    padding: 20px 40px;
+    border: 2px solid #0A4B3E;
+    border-radius: 8px;
+    color: #0A4B3E;
+    font-size: 16px;
+    font-weight: 450;
+    cursor: pointer;
+}
+.art_button:hover{
+    background-color: #0A4B3E;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.art_subContainer2{
+    align-items: center;
+    background-color: #ffebeb;
+    justify-content: center;
+    padding: 20px;
+}
+.art_subContianer_gridHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.art_subContiner2_gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); 
+  grid-template-rows: repeat(2, auto);
+  column-gap: 30px; 
+  row-gap: 30px;
+  width: 100%; 
+  max-width: 1200px; 
+  justify-items: center; 
+  margin: auto;
+}
+
+.art_cardContainer{
+  background-color: white;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.art_cardImage{
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px 8px 0px 0px;
+}
+.art_cardTextcontainer{
+  padding: 10px 20px;
+}
+.art_cardHeading{
+  color: #2C3E50;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 450;
+}
+.art_cardText{
+  color: #4B5563;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.art_cardButton{
+  text-decoration: none;
+  color: #C93C20;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  margin-top: 5px;
+}
+.cardContainerFlex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+}
+/* Tablet View: 2 columns */
+@media (max-width: 1024px) {
+    .art_subContiner2_gridContainer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Mobile View: 1 column */
+@media (max-width: 600px) {
+    .art_subContiner2_gridContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .art_subContainer2_textContainer{
+      display: flex;
+      align-items: center;
+      text-align: center; 
+      justify-content: center;
+      
+    }
+    .art_sunContainer1_textContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 0px;
+    }
+    .art_cardText{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 20px;
+    }
+   .art_button{
+    margin-top: 30px;
+   }
+}

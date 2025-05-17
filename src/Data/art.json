@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "image": "art1.png",
+    "heading": "Traditional Arts",
+    "text": "Explore the richness of traditional artform passed down through generations.",
+    "link": "https://example.com/ancient-temple"
+  },
+  {
+    "id": 2,
+    "image": "art2.png",
+    "heading": "Music & Dance",
+    "text": "Experience the rhythm and movements that tell our cultural stories.",
+    "link": "https://example.com/historical-fort"
+  },
+  {
+    "id": 3,
+    "image": "art3.png",
+    "heading": "Festivals & Celebrations",
+    "text": "Join us in celebrating our vibrant festivals and cultural events.",
+    "link": "https://example.com/traditional-festival"
+  },
+  {
+    "id": 4,
+    "image": "art4.png",
+    "heading": "Crafts & Artifacts",
+    "text": "Discover the intricate craftsmanship of our cultural artifacts.",
+    "link": "https://example.com/ancient-manuscripts"
+  },
+  {
+    "id": 5,
+    "image": "art5.png",
+    "heading": "Cultural Workshops",
+    "text": "Participate in workshops to learn and preserve cultural practices.",
+    "link": "https://example.com/cultural-dance"
+  },
+  {
+    "id": 6,
+    "image": "art6.png",
+    "heading": "Heritage Sites",
+    "text": "Visit historical sites that showcase our cultural heritage.",
+    "link": "https://example.com/local-handicrafts"
+  }
+]

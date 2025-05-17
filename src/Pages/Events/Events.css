@@ -1,0 +1,522 @@
+.Event_mainContainer {
+    font-family: "Roboto", serif;
+}
+
+.Event_subContainer {
+    position: relative;
+    background: url("../../Images/Eventback.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    color: white;
+    z-index: 1;
+    padding: 60px 40px;
+}
+
+.Event_subContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.Event_headContainer_text {
+    width: 100%;
+}
+
+.Event_featured {
+    color: white;
+    background-color: #C93C20;
+    font-size: 14px;
+    line-height: 20px;
+    width: fit-content;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.Event_liveEvent_head {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 600;
+    padding: 30px 0px;
+    color: white;
+}
+
+.Event_liveEvent_text {
+    font-size: 18px;
+    line-height: 28px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    width: 60%;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.Event_liveEvent_date {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 50px;
+    font-size: 16px;
+    line-height: 20px;
+    flex-wrap: wrap;
+}
+
+.Event_banner_icon {
+    margin-right: 10px;
+}
+
+@keyframes jiggle {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(3px); }
+    50% { transform: translateX(-3px); }
+    75% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+.Event_banner_button {
+    margin-top: 40px;
+    background-color: #C93C20;
+    border-radius: 8px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Event_banner_button:hover {
+    background-color: #B22E1A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Event_banner_button:hover svg {
+    animation: jiggle 0.3s ease-in-out infinite;
+}
+
+.Event_subContainer2 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 40px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.Event_subContainer2_div1 {
+    flex: 3;
+}
+
+.Event_subcontainer_div1_headtext {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #0A4B3E;
+    margin-bottom: 32px;
+}
+
+.Event_subContainer2_div1_cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.Event_subContainer2_div1_card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.Event_subContainer2_div1_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.Event_subContainer2_div1_card.active {
+    border-color: #C93C20;
+    transform: translateY(-2px);
+}
+
+.Event_subContainer1_img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.Event_subContainer2_div1_card:hover .Event_subContainer1_img {
+    transform: scale(1.05);
+}
+
+.Event_subContainer1_img_placeholder {
+    height: 200px;
+    width: 100%;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.Event_card_content {
+    padding: 20px;
+}
+
+.Event_subContainer2_div1_card_text2 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1f2937;
+}
+
+.Event_subContainer2_div1_card_text3,
+.Event_subContainer2_div1_card_text4 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.Event_subContainer2_div2 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.Event_subContainer2_div2_headText_Container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #1f2937;
+}
+
+.Event_subContainer2_div2_headText_logo {
+    color: #C93C20;
+    font-size: 28px;
+}
+
+.Event_subContainer2_div2_Announcement_Container {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.Event_announcement_item {
+    margin-bottom: 24px;
+}
+
+.Event_announcement_item:last-child {
+    margin-bottom: 0;
+}
+
+.Event_subContainer2_div2_Announcement_Container_text1 {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.Event_subContainer2_div2_Announcement_Container_text2 {
+    font-size: 16px;
+    margin-top: 8px;
+    line-height: 24px;
+    color: #374151;
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .Event_subContainer2 {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .Event_subContainer2 {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .Event_subContainer2_div1,
+    .Event_subContainer2_div2 {
+        width: 100%;
+    }
+    
+    .Event_subContainer2_div1_cardContainer {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Event_subContainer {
+        padding: 40px 20px;
+        height: auto;
+        min-height: 60vh;
+    }
+    
+    .Event_liveEvent_head {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+    .Event_liveEvent_text {
+        width: 90%;
+    }
+    
+    .Event_liveEvent_date {
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .Event_featured {
+        width: auto;
+        min-width: 120px;
+    }
+    
+    .Event_subContainer2_div1_cardContainer {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Event_subContainer {
+        padding: 30px 16px;
+    }
+    
+    .Event_headContainer_text {
+        margin-top: 0;
+    }
+    
+    .Event_liveEvent_head {
+        font-size: 24px;
+        line-height: 30px;
+        padding: 20px 0;
+    }
+    
+    .Event_liveEvent_text {
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    .Event_subContainer2 {
+        padding: 20px 16px;
+    }
+    
+    .Event_subContainer2_div1_cardContainer {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .Event_subContainer2_div2_Announcement_Container {
+        padding: 20px;
+    }
+}
+
+/* Add these new styles to your existing Events.css */
+
+.Event_loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.Event_no_events {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.Event_card_description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #6b7280;
+  margin-top: 12px;
+  font-weight: 400;
+}
+
+/* Ensure background image transitions smoothly */
+.Event_subContainer {
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Enhanced image placeholder styling */
+.Event_subContainer1_img_placeholder {
+  height: 200px;
+  width: 100%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 14px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Image error handling */
+.Event_subContainer1_img:not([src]),
+.Event_subContainer1_img[src=""] {
+  display: none;
+}
+
+/* Ensure images fit properly */
+.Event_subContainer1_img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.Event_subContainer2_div1_card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .Event_loading {
+      height: 40vh;
+      font-size: 16px;
+  }
+  
+  .Event_card_description {
+      font-size: 13px;
+      line-height: 18px;
+  }
+}
+
+/* Remove the background property from this class and let inline styles handle it */
+.Event_subContainer {
+  position: relative;
+  /* Remove this line: background: url("../../Images/Eventback.png") no-repeat center center; */
+  /* Remove this line: background-size: cover; */
+  width: 100%;
+  height: 70vh;
+  min-height: 500px; /* Add minimum height */
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  color: white;
+  z-index: 1;
+  padding: 60px 40px;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Remove the ::before pseudo-element since we're using linear-gradient for overlay */
+.Event_subContainer::before {
+  display: none;
+}
+
+/* Ensure full width coverage */
+.Event_mainContainer {
+  font-family: "Roboto", serif;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Make sure the container spans full width */
+.Event_subContainer {
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center it properly */
+}
+
+/* Responsive background adjustments */
+@media (max-width: 768px) {
+  .Event_subContainer {
+      height: auto;
+      min-height: 60vh;
+      padding: 40px 20px;
+      margin-left: -20px;
+      width: calc(100% + 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .Event_subContainer {
+      height: auto;
+      min-height: 55vh;
+      padding: 30px 16px;
+      margin-left: -16px;
+      width: calc(100% + 32px);
+  }
+}
+
+/* Add these additional styles for better background coverage */
+.Event_headContainer_text {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ensure the background image covers the entire section */
+@media (min-width: 1200px) {
+  .Event_subContainer {
+      margin-left: 0;
+      width: 100%;
+  }
+}

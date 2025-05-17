@@ -1,0 +1,294 @@
+.Contact_mainContainer {
+  font-family: "Roboto", serif;
+}
+.Contact_bannerContainer {
+  position: relative;
+  background: url("../../Images/Eventback.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+.Contact_bannerContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.Contact_headContnainer_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Contact_heading {
+  font-size: 48px;
+}
+.Contact_subhead {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 300;
+  width: 80%;
+  margin-top: 20px;
+}
+.Contact_subContainer1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.Contact_iconsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, auto);
+  column-gap: 30px;
+  row-gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center;
+  margin: auto;
+}
+.Contact_iconDiv1 {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+}
+.Contact_icon_circle {
+  color: #c93c20;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 28px;
+}
+.Contact_iconDiv1_text1 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 10px 0px;
+}
+.Contact_iconDiv1_text2 {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 28px;
+  text-decoration: none;
+}
+.Contact_iconLink {
+  text-decoration: none;
+  color: #4b5563;
+}
+.Contact_iconDiv1_text3 {
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #c93c20;
+}
+.Contact_Formcontainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, auto);
+  column-gap: 30px;
+  row-gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center;
+  margin: auto;
+  margin-top: 40px;
+}
+.Contact_FormContainerDiv1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Contact_FormContainerDiv1_headText {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+.Contact_inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Contact_field {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+}
+.Contact_inputName {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 24px;
+}
+.Contact_input {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  border-radius: 8px;
+  color: black !important;
+  font-size: 14px;
+  font-weight: lighter;
+  border: none;
+  border: 1px solid #a9adb4;
+}
+.Contact_button_container {
+  border: 1px solid #c93c20;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  background-color: #c93c20;
+  cursor: pointer;
+}
+.Contact_button_container:hover {
+  background-color: white;
+  color: #c93c20;
+  transition: 0.3s all ease-in-out;
+}
+.Contact_login_button {
+  color: #c93c20;
+  text-decoration: none;
+}
+
+.Contact_mapContainer iframe {
+  padding: 20px;
+  width: 100%;
+  height: 400px;
+  max-width: 600px;
+}
+.Contact_mapText{
+    padding: 20px;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 5px;
+}
+.Contact_Directions{
+    text-decoration: none;
+    color: #c93c20;
+    padding-left: 20px;
+}
+.Contact_FAQ{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.Contact_FAQ_questions_gridContainer{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    column-gap: 30px;
+    row-gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    justify-items: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.Contact_FAQ_QuestionDiv_main{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+.Contact_FAQ_QuestionDiv_sub{
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #fcdede;
+    border-radius: 8px;
+    max-width: max-content;
+}
+.Contact_FAQ_question{
+    font-size: 16px;
+    line-height: 32px;
+}
+.Contact_FAQ_answer{
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 26px;
+    width: 90%;
+}
+@media (max-width: 1250px){
+    .Contact_Formcontainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .Contact_FormContainerDiv1{
+        width: 70%;
+    }
+    .Contact_FormContainerDiv1_headText{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .Contact_mapContainer,.Contact_mapText,.Contact_Directions{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .Contact_FAQ_questions_gridContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .Contact_FAQ_QuestionDiv_sub{
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 750px){
+    .Contact_iconsGrid{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .Contact_FAQ_QuestionDiv_sub{
+        width: 400px;
+    }
+}
+@media (max-width: 450px){
+    .Contact_FAQ_QuestionDiv_sub{
+        width: 300px;
+    }
+    .Contact_mapContainer iframe {
+        padding: 20px;
+        width: 120%;
+        height: 400px;
+        max-width: 600px;
+      }
+}

@@ -1,0 +1,74 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+
+/* Full-page container */
+.starter-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a1a; /* Dark background for contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Welcome section */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0; /* Start hidden for GSAP animation */
+  z-index: 2; /* Ensure it's above the carousel */
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  color: #fff; /* White text for contrast */
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-section .logo {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Carousel */
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Behind the welcome section */
+}
+
+.carousel-image {
+  width: 150px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0; /* Start hidden for GSAP animation */
+  transform: scale(0.5); /* Start smaller */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .welcome-section h1 {
+    font-size: 4rem; /* Larger text for bigger screens */
+  }
+
+  .carousel-image {
+    width: 200px; /* Larger images for bigger screens */
+  }
+}

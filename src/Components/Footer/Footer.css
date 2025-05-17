@@ -1,0 +1,147 @@
+.footer {
+    background: #111827;
+    color: white;
+    padding: 60px 20px; /* Increased padding to make the footer bigger */
+    font-family: "Arial", sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px; /* Increased width for better spacing */
+    margin: 20px;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    gap: 10px;
+  }
+  
+  .footer-logo-img {
+    width: 40px; 
+    height: auto;
+  }
+  
+  
+  .footer-description {
+    font-size: 16px; 
+    color: #ccc;
+    margin-top: 12px;
+    line-height: 1.6; 
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px; 
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 12px 0; 
+  }
+  
+  .footer-section ul li a {
+    color: #ccc;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #C5A572;
+    text-decoration: underline;
+  }
+  
+  .newsletter p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter-input {
+    display: flex;
+    align-items: center;
+    background: #1f2937;
+    border-radius: 8px; 
+    overflow: hidden;
+    margin-top: 15px;
+  }
+  
+  .newsletter-input input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .newsletter-input input::placeholder {
+    color: #ccc;
+    font-size: 14px;
+  }
+  
+  .newsletter-input button {
+    background: #C5A572;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+  }
+  
+
+  .newsletter-input button:hover {
+    background: #b08a5b;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px; 
+    font-size: 16px;
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-section {
+      text-align: center;
+    }
+  
+    .footer-logo {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
+    }
+  
+    .footer-logo-img {
+      margin-bottom: 5px;
+    }
+  }
+  
+  

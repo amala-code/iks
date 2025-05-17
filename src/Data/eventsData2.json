@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "title": "Upcoming ONAM 2025",
+      "category": "Gathering",
+      "date": "February 20, 2024",
+      "venue": "Brilliant Convention Center",
+      "image": "Events1.png",
+      "registerLink": "#"
+    },
+    {
+      "id": 2,
+      "title": "AI & ML Conference",
+      "category": "Gathering",
+      "date": "March 5, 2024",
+      "venue": "Grand Tech Hall",
+      "image": "Events2.png",
+      "registerLink": "#"
+    },
+    {
+      "id": 3,
+      "title": "Cybersecurity Summit",
+      "category": "Gathering",
+      "date": "March 15, 2024",
+      "venue": "SecureTech Arena",
+      "image": "Events3.png",
+      "registerLink": "#"
+    }
+  ]
