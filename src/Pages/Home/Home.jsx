@@ -10,12 +10,12 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 import data from "../../Data/homeEvent.json";
 import { MdGroups } from "react-icons/md";
 import data2 from "../../Data/testemonial.json";
-import HGG1 from "../../Images/HGG1.JPG";
-import HGG2 from "../../Images/HGG2.JPG";
-import HGG3 from "../../Images/HGG3.JPG";
-import HGG4 from "../../Images/HGG4.JPG";
-import HGG5 from "../../Images/HGG5.JPG";
-import HGG6 from "../../Images/HGG6.JPG";
+import HGG1 from "../../Images/HGG1.jpg";
+import HGG2 from "../../Images/HGG2.jpg";
+import HGG3 from "../../Images/HGG3.jpg";
+import HGG4 from "../../Images/HGG4.jpg";
+import HGG5 from "../../Images/HGG5.jpg";
+import HGG6 from "../../Images/HGG6.jpg";
 import HGG7 from "../../Images/HGG7.JPG";
 import HGG8 from "../../Images/HGG8.JPG";
 import Home1 from '../../Images/Home1.png';
@@ -53,7 +53,7 @@ const Home = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('https://iks-admin-backend.vercel.app/all_events');
+        const response = await axios.get('https://iks-admin-backend.onrender.com/all_events');
         const events = response.data.events || [];
 
         setAnnouncementList(response.data.events);
@@ -105,7 +105,7 @@ const Home = () => {
 
 <div className={`top-images ${animationState}`}>
             {topImageSets[currentTopSetIndex].map((src, index) => (
-              <img key={`top-${index}`} src={src} alt={`Kerala Culture ${index}`} />
+              <img loading="lazy"key={`top-${index}`} src={src} alt={`Kerala Culture ${index}`} />
             ))}
           </div>
           
@@ -127,7 +127,7 @@ const Home = () => {
           
           <div className={`bottom-images ${animationState}`}>
             {bottomImageSets[currentBottomSetIndex].map((src, index) => (
-              <img key={`bottom-${index}`} src={src} alt={`Kerala Tradition ${index}`} />
+              <img loading="lazy"key={`bottom-${index}`} src={src} alt={`Kerala Tradition ${index}`} />
             ))}
           </div>
 
@@ -139,9 +139,9 @@ const Home = () => {
 
 
       {/* <div className="top-images">
-        <img src={Home1} alt="Landscape" />
-        <img src={Home2} alt="Boat Race" />
-        <img src={Home3} alt="Historic Building" />
+        <img loading="lazy"src={Home1} alt="Landscape" />
+        <img loading="lazy"src={Home2} alt="Boat Race" />
+        <img loading="lazy"src={Home3} alt="Historic Building" />
       </div>
       
       <div className="text-section">
@@ -160,9 +160,9 @@ const Home = () => {
 </NavLink>
       </div>
       <div className="bottom-images">
-        <img src={Home4} alt="Drummers" />
-        <img src={Home5} alt="Flower Rangoli" />
-        <img src={Home6} alt="Kathakali Artist" />
+        <img loading="lazy"src={Home4} alt="Drummers" />
+        <img loading="lazy"src={Home5} alt="Flower Rangoli" />
+        <img loading="lazy"src={Home6} alt="Kathakali Artist" />
       </div> */}
     </div>
 
@@ -238,7 +238,7 @@ const Home = () => {
               </div>
     
               <div className="Home_President_container">
-  <img src={img2} alt="President" className="Home_president_image" />
+  <img loading="lazy"src={img2} alt="President" className="Home_president_image" />
   <div className="Home_president_message">
     <p>
       "It’s an honor to lead The Indore Keraleeya Samajam. Over decades, we’ve grown as a united, culturally rich Malayali community, rooted in service, education, and compassion. Our school and collective spirit reflect our commitment to a brighter, inclusive future together."
@@ -307,14 +307,14 @@ const Home = () => {
         <div className="Home_photoGallery_mainContainer">
           <h2 className="testimonials-title">Photo Gallery</h2>
           <div className="Home_photoGallery_gridContianer">
-            <img src={HGG1} alt="" className="Home_photogalleryImage" />
-            <img src={HGG2} alt="" className="Home_photogalleryImage" />
-            <img src={HGG3} alt="" className="Home_photogalleryImage" />
-            <img src={HGG4} alt="" className="Home_photogalleryImage" />
-            <img src={HGG5} alt="" className="Home_photogalleryImage" />
-            <img src={HGG6} alt="" className="Home_photogalleryImage" />
-            <img src={HGG7} alt="" className="Home_photogalleryImage" />
-            <img src={HGG8} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG1} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG2} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG3} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG4} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG5} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG6} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG7} alt="" className="Home_photogalleryImage" />
+            <img loading="lazy"src={HGG8} alt="" className="Home_photogalleryImage" />
           </div>
           <NavLink
   to="/gallery"

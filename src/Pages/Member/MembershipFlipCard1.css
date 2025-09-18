@@ -1,0 +1,418 @@
+:root {
+    /* Color Palette - Maroon Theme */
+    --primary-color: #C93C20; /* Maroon */
+    --primary-light: #fff1f2;
+    --primary-dark: #C93C20;
+    --accent-color: #d4af37; /* Gold accent */
+    --text-dark: #2c1518;
+    --text-light: #666666;
+    --background-light: #ffffff;
+    --background-gray: #f9f6f7;
+    --border-color: #e5d8db;
+    --success-color: #3e8914;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(128, 0, 32, 0.05);
+    --shadow-md: 0 4px 12px rgba(128, 0, 32, 0.08);
+    --shadow-lg: 0 8px 24px rgba(128, 0, 32, 0.12);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+  }
+  
+  /* Container */
+  .membership-container {
+    width: 100%;
+    max-width: 1200px; /* Increased width */
+    margin: 2rem auto;
+    perspective: 1500px;
+    padding: 0 var(--spacing-md);
+  }
+  
+  /* Card */
+  .membership-card {
+    position: relative;
+    width: 100%;
+    height: 750px; /* Increased height */
+    transform-style: preserve-3d;
+    transition: transform var(--transition-slow);
+  }
+  
+  .membership-card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  /* Card Sides */
+  .membership-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .front {
+    background: linear-gradient(135deg, var(--primary-light), var(--background-light));
+    border: 1px solid var(--border-color);
+  }
+  
+  .back {
+    background: linear-gradient(135deg, var(--background-light), var(--primary-light));
+    /* border: 1px solid var(--border-color); */
+    transform: rotateY(180deg);
+  }
+  
+  /* Card Header */
+  .card-header {
+    background-color: white;
+    color: #0A4B3E;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    text-align: center;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+    font-size: 1.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .card-header h2 svg {
+    font-size: 1.85rem;
+  }
+  
+  /* Card Content */
+  .card-content {
+    padding: var(--spacing-xl);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    flex: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .card-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Form Styling */
+  .form-section, .benefits-section, .info-section {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+  }
+  
+  .input-group {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .input-group label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+  }
+  
+  .input-group input, 
+  .input-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+  }
+  
+  .input-group input:focus, 
+  .input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(128, 0, 32, 0.15);
+  }
+  
+  .input-with-button {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+  
+  .input-with-button input {
+    flex: 1;
+  }
+  
+  /* Button Styling */
+  .primary-button, 
+  .secondary-button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .primary-button {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .primary-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .secondary-button {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .secondary-button:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+  }
+  
+  .wide {
+    width: 100%;
+  }
+  
+  .primary-button:disabled,
+  .primary-button.loading {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+  
+  /* Member Details */
+  .member-details {
+    background-color: var(--primary-light);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    border: 1px solid var(--border-color);
+  }
+  
+  .member-info {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .member-info h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+  }
+  
+  .member-info p {
+    margin: var(--spacing-sm) 0;
+    font-size: 1.05rem;
+  }
+  
+  /* QR Container */
+  .qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-md);
+  }
+  
+  .payment-qr {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-sm);
+    background-color: white;
+  }
+  
+  .qr-container p {
+    margin-top: var(--spacing-md);
+    color: var(--text-light);
+    font-style: italic;
+  }
+  
+  /* Benefits List */
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+  }
+  
+  .benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+    font-size: 1.05rem;
+  }
+  
+  .benefits-list li svg {
+    color: var(--success-color);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+  
+  /* Not Member */
+  .not-member {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .not-member p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+  
+  /* Required Field */
+  .required {
+    color: var(--accent-color);
+  }
+  
+  /* Section Headers */
+  .form-section h3,
+  .benefits-section h3,
+  .info-section h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.35rem;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+    letter-spacing: 0.5px;
+  }
+  
+  .form-section h3::after,
+  .benefits-section h3::after,
+  .info-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .membership-card {
+      height: 800px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .membership-card {
+      height: 950px;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+    
+    .input-with-button {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-header h2 {
+      font-size: 1.5rem;
+    }
+    
+    .card-content {
+      padding: var(--spacing-md);
+    }
+    
+    .form-section, .benefits-section, .info-section {
+      padding: var(--spacing-md);
+    }
+    
+    .membership-card {
+      height: 1000px;
+    }
+  }
+
+  /* Base class - no scrolling on larger screens */
+.membership-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden; /* No scrolling by default on larger screens */
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add vertical scrolling only on smaller screens */
+@media (max-width: 992px) {
+  .membership-side {
+      overflow-y: auto; /* Vertical scroll only when needed */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+}
+
+/* Ensure scrollbars are fully visible on mobile */
+@media (max-width: 767px) {
+  .membership-side {
+      /* Show scrollbar on devices that might hide it */
+      scrollbar-width: thin; /* For Firefox */
+  }
+  
+  .membership-side::-webkit-scrollbar {
+      width: 6px; /* Width of scrollbar */
+  }
+  
+  .membership-side::-webkit-scrollbar-thumb {
+      background-color: var(--primary-color); /* Scrollbar color */
+      border-radius: 6px;
+  }
+  
+  .membership-side::-webkit-scrollbar-track {
+      background: var(--border-color); /* Track color */
+  }
+}

@@ -25,7 +25,7 @@
 //   useEffect(() => {
 //     const fetchEvents = async () => {
 //       try {
-//         const response = await axios.get('https://iks-admin-backend.vercel.app/all_events');
+//         const response = await axios.get('https://iks-admin-backend.onrender.com/all_events');
 //         const events = response.data.events || [];
 
 //         setAnnouncementList(response.data.events);
@@ -75,7 +75,7 @@
 //   <div key={event.id} className="Event_subContainer2_div1_card">
 //     {event.image && (
 //       <img
-//         src={`https://iks-admin-backend.vercel.app/static/images/${event.image}`}
+//         src={`https://iks-admin-backend.onrender.com/static/images/${event.image}`}
 //         alt={event.title}
 //         className="Event_subContainer1_img"
 //       />
@@ -141,14 +141,14 @@ const Events = () => {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [isAutoRotating, setIsAutoRotating] = useState(true);
   const [allEvents, setAllEvents] = useState([]);
-  const [backgroundImage, setBackgroundImage] = useState("../../Images/Eventback.png");
+  const [backgroundImage, setBackgroundImage] = useState("../../Images/Eventback.jpg");
   const announcementsRef = useRef(null);
 
   // Fetch dynamic events from API
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('https://iks-admin-backend.vercel.app/all_events');
+        const response = await axios.get('https://iks-admin-backend.onrender.com/all_events');
         const events = response.data.events || [];
         
         setAnnouncementList(events);
@@ -159,7 +159,7 @@ const Events = () => {
           setEvent(events[0]);
           // Set background image from first event
           if (events[0].background_image || events[0].image) {
-            setBackgroundImage(`https://iks-admin-backend.vercel.app/static/images/${events[0].background_image || events[0].image}`);
+            setBackgroundImage(`https://iks-admin-backend.onrender.com/static/images/${events[0].background_image || events[0].image}`);
           }
         }
         
@@ -186,7 +186,7 @@ const Events = () => {
         
         // Update background image when event changes
         if (nextEvent && (nextEvent.background_image || nextEvent.image)) {
-          setBackgroundImage(`https://iks-admin-backend.vercel.app/static/images/${nextEvent.background_image || nextEvent.image}`);
+          setBackgroundImage(`https://iks-admin-backend.onrender.com/static/images/${nextEvent.background_image || nextEvent.image}`);
         }
         
         return nextIndex;
@@ -204,7 +204,7 @@ const Events = () => {
     
     // Update background image
     if (selectedEvent && (selectedEvent.background_image || selectedEvent.image)) {
-      setBackgroundImage(`https://iks-admin-backend.vercel.app/static/images/${selectedEvent.background_image || selectedEvent.image}`);
+      setBackgroundImage(`https://iks-admin-backend.onrender.com/static/images/${selectedEvent.background_image || selectedEvent.image}`);
     }
     
     // Resume auto-rotation after 10 seconds
@@ -229,7 +229,7 @@ const Events = () => {
   return (
     <>
       <div className="Event_mainContainer">
-        <div 
+        {/* <div 
           className="Event_subContainer"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})`,
@@ -267,7 +267,57 @@ const Events = () => {
               </a>
             )}
           </div>
-        </div>
+        </div> */}
+
+<div 
+  className="Event_subContainer"
+  style={{
+    backgroundImage: window.innerWidth > 768 
+      ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${backgroundImage})` 
+      : "none",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'scroll'
+  }}
+>
+  {/* Mobile-only image */}
+  <img 
+    src={backgroundImage} 
+    alt="Event Banner" 
+    className="Event_mobileBanner" 
+  />
+
+  <div className="Event_headContainer_text">
+    <p className="Event_featured">Featured Event</p>
+    <div className="Event_liveEvent">
+      <h1 className="Event_liveEvent_head">{event.title}</h1>
+      <p className="Event_liveEvent_text">{event.description}</p>
+      <div className="Event_liveEvent_date">
+        <p>
+          <FaCalendarAlt className="Event_banner_icon" /> 
+          {event.date_time || event.date}
+        </p>
+        <p>
+          <FaLocationDot className="Event_banner_icon" /> 
+          {event.location || event.venue}
+        </p>
+      </div>
+    </div>
+    {(event.registration_link || event.registerLink) && (
+      <a 
+        href={event.registration_link || event.registerLink} 
+        className="Event_banner_button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p style={{ marginRight: "10px" }}>Register Now</p>
+        <FaArrowRight />
+      </a>
+    )}
+  </div>
+</div>
+
 
         <div className="Event_subContainer2">
           <div className="Event_subContainer2_div1">
@@ -286,7 +336,7 @@ const Events = () => {
                   >
                     {eventItem.image ? (
                       <img
-                        src={`https://iks-admin-backend.vercel.app/static/images/${eventItem.image}`}
+                        src={`https://iks-admin-backend.onrender.com/static/images/${eventItem.image}`}
                         alt={eventItem.title}
                         className="Event_subContainer1_img"
                         loading="lazy"

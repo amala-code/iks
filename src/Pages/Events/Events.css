@@ -4,7 +4,7 @@
 
 .Event_subContainer {
     position: relative;
-    background: url("../../Images/Eventback.png") no-repeat center center;
+    background: url("../../Images/Eventback.jpg") no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 70vh;
@@ -266,7 +266,7 @@
     font-weight: 400;
 }
 
-/* Responsive Design */
+
 @media (max-width: 1200px) {
     .Event_subContainer2 {
         padding: 30px 20px;
@@ -334,14 +334,18 @@
     }
     
     .Event_liveEvent_head {
-        font-size: 24px;
+        font-size: 20px;
         line-height: 30px;
-        padding: 20px 0;
+        color: black;
+        padding: auto;
     }
     
     .Event_liveEvent_text {
-        font-size: 16px;
+        font-size: 15px;
         width: 100%;
+        padding: 5%;
+        color: black;
+        text-align: justify;
     }
     
     .Event_subContainer2 {
@@ -358,7 +362,6 @@
     }
 }
 
-/* Add these new styles to your existing Events.css */
 
 .Event_loading {
   display: flex;
@@ -384,12 +387,10 @@
   font-weight: 400;
 }
 
-/* Ensure background image transitions smoothly */
 .Event_subContainer {
   transition: background-image 0.5s ease-in-out;
 }
 
-/* Enhanced image placeholder styling */
 .Event_subContainer1_img_placeholder {
   height: 200px;
   width: 100%;
@@ -402,13 +403,11 @@
   border-radius: 8px 8px 0 0;
 }
 
-/* Image error handling */
 .Event_subContainer1_img:not([src]),
 .Event_subContainer1_img[src=""] {
   display: none;
 }
 
-/* Ensure images fit properly */
 .Event_subContainer1_img {
   height: 200px;
   width: 100%;
@@ -418,7 +417,6 @@
   border-radius: 8px 8px 0 0;
 }
 
-/* Loading animation */
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -447,14 +445,12 @@
   }
 }
 
-/* Remove the background property from this class and let inline styles handle it */
 .Event_subContainer {
   position: relative;
-  /* Remove this line: background: url("../../Images/Eventback.png") no-repeat center center; */
-  /* Remove this line: background-size: cover; */
+
   width: 100%;
   height: 70vh;
-  min-height: 500px; /* Add minimum height */
+  min-height: 800px; 
   display: flex;
   align-items: start;
   justify-content: start;
@@ -462,30 +458,27 @@
   z-index: 1;
   padding: 60px 40px;
   background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
+  background-position: top center !important;
   transition: background-image 0.5s ease-in-out;
 }
 
-/* Remove the ::before pseudo-element since we're using linear-gradient for overlay */
 .Event_subContainer::before {
   display: none;
 }
 
-/* Ensure full width coverage */
 .Event_mainContainer {
   font-family: "Roboto", serif;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden; 
 }
 
-/* Make sure the container spans full width */
 .Event_subContainer {
-  width: 100vw; /* Full viewport width */
-  margin-left: calc(-50vw + 50%); /* Center it properly */
-}
+  width: 100vw; 
 
-/* Responsive background adjustments */
+
+
+  margin-left: calc(-50vw + 50%);
+}
 @media (max-width: 768px) {
   .Event_subContainer {
       height: auto;
@@ -506,17 +499,50 @@
   }
 }
 
-/* Add these additional styles for better background coverage */
 .Event_headContainer_text {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Ensure the background image covers the entire section */
 @media (min-width: 1200px) {
   .Event_subContainer {
       margin-left: 0;
       width: 100%;
   }
 }
+
+/* Hide mobile image by default */
+.Event_mobileBanner {
+    display: none;
+  }
+  
+  /* Mobile layout */
+  @media (max-width: 768px) {
+    .Event_subContainer {
+      background: none !important; /* Remove background */
+      padding: 20px 16px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: black;
+    }
+  
+    .Event_mobileBanner {
+      display: block;
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: black;
+
+    }
+  
+    .Event_headContainer_text {
+      width: 100%;
+      color: black;
+
+    }
+  }
+  

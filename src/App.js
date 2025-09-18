@@ -15,6 +15,7 @@ import CreateContent from "./Components/AdminPortal/CreteContent";
 import AdminDashboard from "./Components/AdminPortal/Admindashboard";
 import Memebr from "./Pages/IKSMember/Memebr";
 import MembershipFlipCard from "./Pages/Member/member";
+import CulturalPlatform from "./Pages/Home/Home2";
 
 function App() {
   const [showStarterPage, setShowStarterPage] = useState(true);

@@ -1,0 +1,589 @@
+/* Payment Loader Styles */
+.payment-loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .payment-loader {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ffe4dc;
+    border-top: 3px solid #ff6b35;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  .payment-loader-container p {
+    color: #ff6b35;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Payment Success Card - Separate from member info */
+  .payment-success-card {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 2px solid #ffe4dc;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Update the existing payment success section to use the new card */
+  .payment-success-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+  }
+  
+  /* Enhanced Success Animation */
+  .success-animation {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b35, #ff8a65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: successPulse 0.8s ease-out;
+    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+  }
+  
+  .checkmark-circle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b35, #ff8a65);
+    animation: ripple 0.8s ease-out;
+    z-index: -1;
+  }
+  
+  .checkmark {
+    width: 32px;
+    height: 18px;
+    border: 4px solid white;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    animation: checkmarkSlide 0.6s ease-out 0.4s both;
+    position: relative;
+  }
+  
+  @keyframes successPulse {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes checkmarkSlide {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    30% {
+      width: 16px;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      width: 32px;
+      height: 18px;
+      opacity: 1;
+    }
+  }
+  
+  /* Success Message */
+  .success-message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .success-message h4 {
+    color: #ff6b35;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .success-message p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  /* Download Receipt Button */
+  .download-receipt-button {
+    background: linear-gradient(135deg, #ff6b35, #ff8a65);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .download-receipt-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #ff8a65, #ff6b35);
+  }
+  
+  .download-receipt-button:active {
+    transform: translateY(0);
+  }
+  
+  .download-receipt-button svg {
+    font-size: 1.1rem;
+  }
+  
+  /* Payment Failed Section */
+  .payment-failed-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #fef2f2, #ffffff);
+    border-radius: 12px;
+    border: 1px solid #fecaca;
+  }
+  
+  .failed-animation {
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: errorPulse 0.8s ease-out;
+    box-shadow: 0 6px 25px rgba(231, 76, 60, 0.4);
+  }
+  
+  .error-circle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    animation: errorRipple 0.8s ease-out;
+    z-index: -1;
+  }
+  
+  .error-cross {
+    width: 30px;
+    height: 30px;
+    position: relative;
+  }
+  
+  .error-cross::before,
+  .error-cross::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background: white;
+    left: 50%;
+    top: 0;
+    transform-origin: center;
+    animation: crossSlide 0.6s ease-out 0.4s both;
+  }
+  
+  .error-cross::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  
+  .error-cross::after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  
+  @keyframes errorPulse {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes errorRipple {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes crossSlide {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: 30px;
+      opacity: 1;
+    }
+  }
+  
+  /* Error Message */
+  .error-message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-message h4 {
+    color: #e74c3c;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .error-message p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  /* Retry Button */
+  .retry-button {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .retry-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+  }
+  
+  .retry-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Transaction Card Styles (Legacy - keeping for backward compatibility) */
+  .transaction-card {
+    background: linear-gradient(135deg, #fff5f2, #ffffff);
+    border: 2px solid #ff6b35;
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .transaction-card.error-card {
+    background: linear-gradient(135deg, #fef2f2, #ffffff);
+    border-color: #e74c3c;
+    box-shadow: 0 8px 32px rgba(231, 76, 60, 0.15);
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ffe4dc;
+  }
+  
+  .transaction-header h3 {
+    color: #ff6b35;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .download-button {
+    background: linear-gradient(135deg, #ff6b35, #ff8a65);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+  
+  .download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  }
+  
+  .download-button:active {
+    transform: translateY(0);
+  }
+  
+  .transaction-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ffe4dc;
+  }
+  
+  .detail-row:last-child {
+    border-bottom: none;
+  }
+  
+  .detail-row span:first-child {
+    font-weight: 600;
+    color: #666;
+    flex: 1;
+  }
+  
+  .detail-row span:last-child {
+    font-weight: 700;
+    color: #333;
+    text-align: right;
+    flex: 1;
+    word-break: break-word;
+  }
+  
+  .status-success {
+    color: #ff6b35 !important;
+    background: #ffe4dc;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .error-details {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .error-details p {
+    margin: 0.5rem 0;
+    color: #991b1b;
+  }
+  
+  /* Payment Container Styles (Legacy) */
+  .payment-container {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  
+  /* Wide button style */
+  .primary-button.wide {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  /* Loading state for buttons */
+  .primary-button.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+  }
+  
+  .primary-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .payment-success-section,
+    .payment-failed-section {
+      padding: 1rem 0;
+    }
+    
+    .checkmark-circle,
+    .error-circle {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .checkmark {
+      width: 22px;
+      height: 12px;
+      border-width: 3px;
+    }
+    
+    .error-cross {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .error-cross::before,
+    .error-cross::after {
+      width: 3px;
+      height: 24px;
+    }
+    
+    .success-message h4,
+    .error-message h4 {
+      font-size: 1.1rem;
+    }
+
+    .payment-success-card {
+        padding: 1.5rem;
+        margin-top: 0.5rem;
+      }
+    
+    .success-message p,
+    .error-message p {
+      font-size: 0.9rem;
+    }
+    
+    .download-receipt-button,
+    .retry-button {
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+    }
+    
+    .payment-loader {
+      width: 40px;
+      height: 40px;
+      border-width: 2px;
+    }
+    
+    .payment-loader-container {
+      padding: 1rem;
+    }
+    
+    .transaction-card {
+      max-width: 100%;
+      padding: 1rem;
+    }
+    
+    .transaction-header h3 {
+      font-size: 1.2rem;
+    }
+    
+    .detail-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+    }
+    
+    .detail-row span:last-child {
+      text-align: left;
+      font-size: 0.9rem;
+    }
+  }

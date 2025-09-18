@@ -30,7 +30,7 @@ const MembershipMini = () => {
     
     setIsLoading(true);
     try {
-      const response = await axios.post('https://iks-admin-backend.vercel.app/member/phone', { phone });
+      const response = await axios.post('https://iks-admin-backend.onrender.com/member/phone', { phone });
       
       if (response.data) {
         setUserData(response.data);
@@ -69,10 +69,10 @@ const MembershipMini = () => {
     setRegistrationLoading(true);
     try {
       // Make API call to register new member
-      const response = await axios.post('https://iks-admin-backend.vercel.app/register_new_user_request', formData);
+      const response = await axios.post('https://iks-admin-backend.onrender.com/register_new_user_request', formData);
       
       if (response.data && response.data.success) {
-        toast.success("Registration successful! We'll review your application and get back to you soon.");
+        toast.success("Your Information is sent successfully. We'll review your application and get back to you soon.");
         setIsFlipped(false); // Flip back to front side
         setFormData({ 
           name: "", 

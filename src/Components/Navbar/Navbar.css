@@ -1,24 +1,22 @@
-/* Navbar Container */
-.navbar {
+ /* .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 34px 20px;
   background: white;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   font-family: "Roboto", serif;
-  position: relative; /* Add this to contain the absolute positioned nav-links */
+  position: relative; 
 }
 
-/* Logo and Title */
 .nav-logo {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 40px;
-  margin-right: 10px;
+  height: 50px;
+  margin-right: 15px;
 }
 
 .nav-title h1 {
@@ -33,7 +31,6 @@
   margin: 0;
 }
 
-/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -48,12 +45,11 @@
 .nav-links a {
   text-decoration: none;
   color: #111;
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
   padding-bottom: 5px;
 }
 
-/* Underline on Hover */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -61,7 +57,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: #c53030; /* Adjust to match your theme */
+  background-color: #7a1717; 
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
@@ -71,7 +67,7 @@
 }
 
 .join-btn {
-  background: #c5a572;
+  background: #ffffff;
   border: 1px solid #c5a572;
   padding: 8px 15px;
   border-radius: 5px;
@@ -81,46 +77,43 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Button Hover Effect */
 .join-btn:hover {
   background-color: white;
-  border: 1px solid #c5a572;
-  color: #c5a572;
+  border: 1px solid #850f0f;
+  color: maroon;
 }
 
-/* Hamburger Menu */
 .hamburger {
   font-size: 24px;
   cursor: pointer;
   display: none;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide by default */
+    display: none; 
     flex-direction: column;
     position: absolute;
-    top: 100%; /* Position below the navbar */
+    top: 100%; 
     right: 0;
     background: white;
-    width: 100%; /* Full width */
+    width: 100%; 
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    z-index: 1000; /* Ensure it appears above other content */
+    z-index: 1000; 
   }
 
   .nav-links.open {
-    display: flex; /* Show when open */
+    display: flex; 
   }
 
   .hamburger {
-    display: block; /* Show hamburger icon */
+    display: block; 
   }
 }
-/* Active Link Style */
+
 .nav-links a.active {
-  color: #c53030; 
+  color: maroon; 
   font-weight: bold; 
 }
 
@@ -128,12 +121,9 @@
   transform: scaleX(1); 
 }
 
-/* Navbar.css */
-
-/* Join Us Button Styles */
 .join-btn {
-  background: #c5a572;
-  border: 1px solid #c5a572;
+  background: maroon;
+  border: 1px solid white;
   padding: 8px 15px;
   border-radius: 5px;
   color: white;
@@ -142,9 +132,197 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Button Hover Effect */
 .join-btn:hover {
   background-color: white;
-  border: 1px solid #c5a572;
-  color: #c5a572;
+  border: 1px solid maroon;
+  color: maroon;
+}   */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+  background: linear-gradient(135deg, #ffffff, #fdf8f5);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  font-family: "Roboto", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid maroon;
+  box-shadow: 0 3px 12px rgba(122, 23, 23, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-title h1 {
+  font-size: 20px;
+  color: #0a4b3e;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-title p {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0 0 0;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, maroon, gold);
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: maroon;
+  text-shadow: 0 1px 1px rgba(128, 0, 0, 0.2);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: maroon;
+  font-weight: 700;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, maroon, #a32f2f);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 14px rgba(128, 0, 32, 0.2);
+  white-space: nowrap;
+}
+
+.join-btn:hover {
+  background: white;
+  color: maroon;
+  border: 1px solid maroon;
+  box-shadow: 0 6px 18px rgba(128, 0, 32, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Phone Number */
+.phone-number {
+  font-size: 14px;
+  color: maroon;
+  font-weight: 600;
+  margin-left: 20px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone-number::before {
+  content: "📞";
+  font-size: 16px;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  color: maroon;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .join-btn {
+    margin-top: 10px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .phone-number {
+    display: none;
+  }
+}
+
