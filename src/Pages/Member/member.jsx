@@ -416,21 +416,31 @@ const MembershipFlipCard = () => {
     
     setRegistrationLoading(true);
     try {
-      const response = await axios.post('https://new-admin-backend.vercel.app/register_non_member_request', formData);
-      
-      if (response.data && response.data.success) {
-        toast.success("Your Information is sent successfully. We'll review your application and get back to you soon.");
+      const response = await axios.post(
+        "https://new-admin-backend.vercel.app/register_non_member_request",
+        formData
+      );
+    
+      // If API responds with 200/201 = success
+      if (response.status === 200 || response.status === 201) {
+        toast.success(
+          response.data.message ||
+            "Your Information is sent successfully. We'll review your application and get back to you soon."
+        );
+    
         setIsFlipped(false);
-        setFormData({ 
-          name: "", 
-          email: "", 
-          phone: "", 
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
           address: "",
           member_true: false,
-          id: "Not Allocated"
+          id: "Not Allocated",
         });
       } else {
-        toast.error(response.data.message || "Registration failed. Please try again later.");
+        toast.error(
+          response.data.message || "Registration failed. Please try again later."
+        );
       }
     } catch (error) {
       toast.error("Error during registration. Please try again later.");
@@ -438,6 +448,7 @@ const MembershipFlipCard = () => {
     } finally {
       setRegistrationLoading(false);
     }
+    
   };
 
   return (
@@ -490,6 +501,13 @@ const MembershipFlipCard = () => {
                     <h3>Member Information</h3>
                     <p><strong>Name:</strong> {userData.name}</p>
                     <p><strong>ID:</strong> {userData.id}</p>
+                    
+                    <p>
+  <strong>Subscription:</strong>{" "}
+  {userData && userData.amount_subscription
+    ? `Paid — ${new Date().getFullYear()}`
+    : `Due — ${new Date().getFullYear()}`}
+</p>
                     
                     {paymentLoading && (
                       <div className="payment-loader-container">

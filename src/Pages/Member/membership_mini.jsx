@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdGroups, MdPayment, MdCheck, MdPhone, MdEmail, MdPerson } from "react-icons/md";
+import { MdGroups, MdPayment, MdPhone, MdEmail, MdPerson } from "react-icons/md";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -68,22 +68,31 @@ const MembershipMini = () => {
     
     setRegistrationLoading(true);
     try {
-      // Make API call to register new member
-      const response = await axios.post('https://new-admin-backend.vercel.app/register_new_user_request', formData);
-      
-      if (response.data && response.data.success) {
-        toast.success("Your Information is sent successfully. We'll review your application and get back to you soon.");
-        setIsFlipped(false); // Flip back to front side
-        setFormData({ 
-          name: "", 
-          email: "", 
-          phone: "", 
+      const response = await axios.post(
+        "https://new-admin-backend.vercel.app/register_non_member_request",
+        formData
+      );
+    
+      // If API responds with 200/201 = success
+      if (response.status === 200 || response.status === 201) {
+        toast.success(
+          response.data.message ||
+            "Your Information is sent successfully. We'll review your application and get back to you soon."
+        );
+    
+        setIsFlipped(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
           address: "",
           member_true: false,
-          id: "6"
-        }); // Reset form
+          id: "Not Allocated",
+        });
       } else {
-        toast.error(response.data.message || "Registration failed. Please try again later.");
+        toast.error(
+          response.data.message || "Registration failed. Please try again later."
+        );
       }
     } catch (error) {
       toast.error("Error during registration. Please try again later.");
@@ -91,6 +100,7 @@ const MembershipMini = () => {
     } finally {
       setRegistrationLoading(false);
     }
+    
   };
 
   return (
