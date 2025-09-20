@@ -26,7 +26,7 @@ const MembershipFlipCard = () => {
   });
   const [registrationLoading, setRegistrationLoading] = useState(false);
 
-  const API_BASE_URL = 'https://iks-admin-backend.onrender.com';
+  const API_BASE_URL = 'https://new-admin-backend.vercel.app';
 
   const handleValidate = async () => {
     if (!phone.trim()) {
@@ -416,7 +416,7 @@ const MembershipFlipCard = () => {
     
     setRegistrationLoading(true);
     try {
-      const response = await axios.post('https://iks-admin-backend.onrender.com/register_new_user_request', formData);
+      const response = await axios.post('https://new-admin-backend.vercel.app/register_non_member_request', formData);
       
       if (response.data && response.data.success) {
         toast.success("Your Information is sent successfully. We'll review your application and get back to you soon.");

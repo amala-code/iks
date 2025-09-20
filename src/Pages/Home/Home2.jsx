@@ -54,7 +54,7 @@ const CulturalPlatform = () => {
     useEffect(() => {
       const fetchEvents = async () => {
         try {
-          const response = await axios.get('https://iks-admin-backend.onrender.com/all_events');
+          const response = await axios.get('https://new-admin-backend.vercel.app/all_events');
           const events = response.data.events || [];
   
           setAnnouncementList(response.data.events);

@@ -17,7 +17,6 @@ const About = () => {
           <div className="about_us_headContnainer_text">
             <h1 className="about_us_heading">About Us</h1>
             <p className="about_us_subhead">
-              Preserving and celebrating Kerala in Indore
             </p>
           </div>
         </div>
@@ -26,10 +25,13 @@ const About = () => {
           <div className="about_us_subcontainer1_div1">
             <h1 className="about_us_subcontainer1_div1_headText">The Indore Keraleeya Samajam</h1>
             <p className="about_us_subcontainer1_div1_text">
-              The Indore Keraleeya Samajam is a socio-cultural organization uniting
-              the Malayalee community in Indore. We welcome all Malayalees,
-              regardless of religious beliefs or social status, creating a
-              common platform for preserving Kerala's rich heritage.
+            The Indore Keraleeya Samajam is a vibrant socio-cultural organization dedicated to bringing together the Malayalee community residing in Indore. Rooted in the spirit of unity, the Samajam warmly welcomes all Malayalees, irrespective of religion, caste, or social background, fostering a sense of belonging and togetherness.
+
+Our primary vision is to create a common platform where members can stay connected to Kerala’s rich traditions, values, and cultural heritage, even while being away from the homeland. Through various cultural, educational, and social initiatives, we strive to celebrate and preserve Kerala’s art forms, language, festivals, and customs, ensuring that younger generations remain connected to their roots.
+
+Beyond cultural preservation, the Samajam also emphasizes community welfare and mutual support. It provides opportunities for social bonding, networking, and extending a helping hand to those in need, thereby strengthening the spirit of fraternity among Malayalees in Indore.
+
+In essence, the Indore Keraleeya Samajam is not just an association—it is a family that bridges hearts, promotes cultural pride, and nurtures unity in diversity, while contributing positively to the larger society of Indore.
             </p>
             
             <div className="about_us_mission">

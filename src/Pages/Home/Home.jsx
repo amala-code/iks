@@ -1,8 +1,8 @@
+
+
 import React, { useRef, useEffect, useState } from "react";
 import "./Home.css";
 import img1 from "../../Images/Img/abtmini.JPG";
-
-// import img2 from "../../Images/President'sImage.png";
 import img2 from "../../Images/prs.jpg";
 import { MdAnnouncement } from "react-icons/md";
 import announcements from "../../Data/announcement.json";
@@ -48,16 +48,27 @@ const Home = () => {
   const [currentTopSetIndex, setCurrentTopSetIndex] = useState(0);
   const [currentBottomSetIndex, setCurrentBottomSetIndex] = useState(0);
   const [animationState, setAnimationState] = useState('visible');
-  
 
+  // ✅ Preload rotating images once
+  useEffect(() => {
+    const preloadImages = [
+      Home1, Home2, Home3, Home4, Home5, Home6,
+      HGG1, HGG2, HGG3, HGG4, HGG5, HGG6, HGG7, HGG8
+    ];
+    preloadImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+  
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('https://iks-admin-backend.onrender.com/all_events');
+        const response = await axios.get('https://new-admin-backend.vercel.app/all_events');
         const events = response.data.events || [];
 
-        setAnnouncementList(response.data.events);
-        console.log(response.data.events);
+        setAnnouncementList(events);
+        console.log(events);
       } catch (error) {
         console.error('Failed to fetch events:', error);
       }
@@ -82,7 +93,7 @@ const Home = () => {
         setAnimationState('fade-in');
       }, 500); // Half second for fade out
       
-    }, 3000); // Change every 5 seconds
+    }, 3000); // Change every 3 seconds
     
     return () => clearInterval(interval); // Cleanup
   }, []);
@@ -90,22 +101,10 @@ const Home = () => {
   return (
     <>
       <div className="Home_mainContainer">
-
-
-
-
-
-
-
-<div className="image-container">
-
-
-
-
-
-<div className={`top-images ${animationState}`}>
+        <div className="image-container">
+          <div className={`top-images ${animationState}`}>
             {topImageSets[currentTopSetIndex].map((src, index) => (
-              <img loading="lazy"key={`top-${index}`} src={src} alt={`Kerala Culture ${index}`} />
+              <img loading="eager" key={`top-${index}`} src={src} alt={`Kerala Culture ${index}`} />
             ))}
           </div>
           
@@ -127,53 +126,23 @@ const Home = () => {
           
           <div className={`bottom-images ${animationState}`}>
             {bottomImageSets[currentBottomSetIndex].map((src, index) => (
-              <img loading="lazy"key={`bottom-${index}`} src={src} alt={`Kerala Tradition ${index}`} />
+              <img loading="eager" key={`bottom-${index}`} src={src} alt={`Kerala Tradition ${index}`} />
             ))}
           </div>
+        </div>
 
-
-
-
-
-
-
-
-      {/* <div className="top-images">
-        <img loading="lazy"src={Home1} alt="Landscape" />
-        <img loading="lazy"src={Home2} alt="Boat Race" />
-        <img loading="lazy"src={Home3} alt="Historic Building" />
-      </div>
       
-      <div className="text-section">
-      <div className="background-shapes2">
-        <div className="shape shape3"></div>
-        <div className="shape shape4"></div>
-      </div>
-      <div className="background-shapes">
-        <div className="shape shape1"></div>
-        <div className="shape shape2"></div>
-      </div>
-        <h1>The Indore Keraleeya Samajam</h1>
-        <p>United by Heart, Connected Beyond Borders</p>
-        <NavLink to="/about" className="learn-more">
-  Learn More
-</NavLink>
-      </div>
-      <div className="bottom-images">
-        <img loading="lazy"src={Home4} alt="Drummers" />
-        <img loading="lazy"src={Home5} alt="Flower Rangoli" />
-        <img loading="lazy"src={Home6} alt="Kathakali Artist" />
-      </div> */}
-    </div>
+     </div>
 
 
-        {/* About Us Section */}
-        <div className="Home_AboutUs_container">
-          <div className="Home_AboutUs_flexContainer">
-            <div className="Home_AboutUs_flex1">
-              <img
+         {/* About Us Section */}
+         <div className="Home_AboutUs_container">
+           <div className="Home_AboutUs_flexContainer">
+             <div className="Home_AboutUs_flex1">
+               <img
                 src={img1}
                 alt="About Us"
+                loading="eager"
                 className="AboutUs_mainImage_HomeAboutImage"
               />
             </div>
@@ -210,7 +179,7 @@ const Home = () => {
                 <MdAnnouncement />
                 <div className="Home_upate_headText">Announcements</div>
               </div>
-              <div className="Home_update_container">
+              {/* <div className="Home_update_container">
                 <div
                   className="Home_update_announcements"
                   ref={announcementsRef}
@@ -229,7 +198,56 @@ const Home = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
+
+
+<div className="Home_update_container">
+  <div className="Home_update_announcements">
+    {/* Duplicate the announcements for seamless loop */}
+    {announcementList.slice().reverse().concat(announcementList.slice().reverse()).map((announcement, index) => (
+      <div className="Home_update_announcement" key={index}>
+        {/* Display image if available and valid */}
+        {announcement.image && announcement.image.trim() !== '' && (
+          <div className="Home_update_announcement_image">
+            <img 
+              src={`https://new-admin-backend.vercel.app/static/images/${announcement.image}`}
+              alt={announcement.title || 'Announcement'}
+              loading="eager"
+              className="announcement_image"
+              onError={(e) => {
+                // Hide image container if image fails to load
+                e.target.parentElement.style.display = 'none';
+                console.log('Image failed to load:', announcement.image);
+              }}
+              onLoad={(e) => {
+                // Ensure image container is visible when image loads successfully
+                e.target.parentElement.style.display = 'block';
+                console.log('Image loaded successfully:', announcement.image);
+              }}
+            />
+          </div>
+        )}
+        <div className="announcement_content">
+          <div className="Home_update_announcement_date">
+            {announcement.date_time}
+          </div>
+          <div className="Home_update_announcement_Head">
+            {announcement.title}
+          </div>
+          <div className="Home_update_announcement_text">
+            {announcement.description && announcement.description.split(' ').length > 10
+              ? announcement.description.split(' ').slice(0, 20).join(' ') + '...'
+              : announcement.description
+            }
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
             </div>
             <div className="Home_update_flex1">
               <div className="Home_update_textContainer">
@@ -238,7 +256,7 @@ const Home = () => {
               </div>
     
               <div className="Home_President_container">
-  <img loading="lazy"src={img2} alt="President" className="Home_president_image" />
+  <img loading="eager"src={img2} alt="President" className="Home_president_image" />
   <div className="Home_president_message">
     <p>
       "It’s an honor to lead The Indore Keraleeya Samajam. Over decades, we’ve grown as a united, culturally rich Malayali community, rooted in service, education, and compassion. Our school and collective spirit reflect our commitment to a brighter, inclusive future together."
@@ -269,6 +287,7 @@ const Home = () => {
                   src={`../../Images/${item.image}`}
                   alt={item.heading}
                   className="art_cardImage"
+                  loading="eager"
                 />
     
               </div>
@@ -307,14 +326,14 @@ const Home = () => {
         <div className="Home_photoGallery_mainContainer">
           <h2 className="testimonials-title">Photo Gallery</h2>
           <div className="Home_photoGallery_gridContianer">
-            <img loading="lazy"src={HGG1} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG2} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG3} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG4} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG5} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG6} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG7} alt="" className="Home_photogalleryImage" />
-            <img loading="lazy"src={HGG8} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG1} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG2} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG3} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG4} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG5} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG6} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG7} alt="" className="Home_photogalleryImage" />
+            <img loading="eager"src={HGG8} alt="" className="Home_photogalleryImage" />
           </div>
           <NavLink
   to="/gallery"
@@ -324,9 +343,10 @@ const Home = () => {
   View Full Gallery
 </NavLink>
         </div>
-      </div>
-    </>
+
+            </>
   );
 };
 
 export default Home;
+

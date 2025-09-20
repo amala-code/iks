@@ -43,7 +43,7 @@ indorekeraleeya_samajam@rediffmail.com                </a>
                 <IoCall />
               </div>
               <div className="Contact_iconDiv1_text1">Call Us</div>
-              <div className="Contact_iconDiv1_text2">2532700</div>
+              <div className="Contact_iconDiv1_text2"> 91115 70909</div>
               <div className="Contact_iconDiv1_text3">Give us a call</div>
             </div>
             <div className="Contact_iconDiv1">
