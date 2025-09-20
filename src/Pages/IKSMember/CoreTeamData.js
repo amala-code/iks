@@ -47,7 +47,7 @@ export const managingCommittee = [
     { id: 'arun_kumar_pk', name: 'Arun Kumar.P.K.', role: 'EC Member', image: './Images/p11.png', },
     { id: 'balakrishnan', name: 'Balakrishnan', role: 'EC Member', image: './Images/p12.png', },
     { id: 'cp_mathew', name: 'C.P.Mathew', role: 'EC Member',image: './Images/p13.png', },
-    { id: 'jayaprakash_p', name: 'Jayaprakash.P.', role: 'EC Member', image: './Images/p14.png',},
+    { id: 'jayaprakash_p', name: 'Jayaprakash V.G.', role: 'EC Member', image: './Images/p14.png',},
     { id: 'johnson_george', name: 'Johnson George', role: 'EC Member', image: './Images/p15.png', },
     { id: 'johnson_joseph', name: 'Johnson Joseph', role: 'EC Member', image: './Images/p16.png', },
     { id: 'joseph_tv', name: 'Joseph.T.V', role: 'EC Member', image: './Images/p17.png',},

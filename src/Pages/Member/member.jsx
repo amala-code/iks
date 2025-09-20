@@ -5,6 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./MembershipFlipCard.css";
 import "./PaymentCard.css";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const MembershipFlipCard = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -22,7 +24,7 @@ const MembershipFlipCard = () => {
     phone: "",
     address: "",
     member_true: false,
-    id: "Not allocated",
+    id: uuidv4(),
   });
   const [registrationLoading, setRegistrationLoading] = useState(false);
 
@@ -435,7 +437,7 @@ const MembershipFlipCard = () => {
           phone: "",
           address: "",
           member_true: false,
-          id: "Not Allocated",
+          id: uuidv4(), // generate a new UUID automatically
         });
       } else {
         toast.error(

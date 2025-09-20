@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./MembershipFlipCard.css";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const MembershipMini = () => {
   const [isFlipped, setIsFlipped] = useState(true);
@@ -18,7 +20,7 @@ const MembershipMini = () => {
     phone: "",
     address: "",
     member_true: false,
-    id: "6",
+    id: uuidv4(),
   });
   const [registrationLoading, setRegistrationLoading] = useState(false);
 
@@ -87,7 +89,7 @@ const MembershipMini = () => {
           phone: "",
           address: "",
           member_true: false,
-          id: "Not Allocated",
+          id: uuidv4(), // generate a new UUID automatically
         });
       } else {
         toast.error(
