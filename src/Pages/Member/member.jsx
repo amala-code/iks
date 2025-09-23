@@ -570,14 +570,15 @@ const MembershipFlipCard = () => {
                     )}
                   </div>
                   
-                  {(!showQR || paymentStatus === 'cancelled' || paymentStatus === 'failed') && paymentStatus !== 'success' && (
+                  {/* {(!showQR || paymentStatus === 'cancelled' || paymentStatus === 'failed') && paymentStatus !== 'success' && (
                     <button
                       onClick={handlePayment}
                       className="primary-button wide"
                     >
                       Proceed to Payment
                     </button>
-                  )}
+                  )} */}
+                  
                 </div>
               )}
               

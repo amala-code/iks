@@ -158,7 +158,7 @@ const MembershipMini = () => {
                     <p><strong>ID:</strong> {userData.id}</p>
                   </div>
                   
-                  {!showQR ? (
+                  {/* {!showQR ? (
                     <button
                       onClick={() => setShowQR(true)}
                       className="primary-button wide"
@@ -174,7 +174,8 @@ const MembershipMini = () => {
                       />
                       <p>Scan to complete payment</p>
                     </div>
-                  )}
+                  )} */}
+                  
                 </div>
               )}
               
