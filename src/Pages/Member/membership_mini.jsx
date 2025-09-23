@@ -254,6 +254,7 @@ const MembershipMini = () => {
                     id="about"
                     placeholder="Enter your address"
                     rows="3"
+                    required
                     value={formData.address}
                     onChange={handleInputChange}
                   />
