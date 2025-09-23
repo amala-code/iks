@@ -379,7 +379,7 @@ const MembershipFlipCard = () => {
             </div>
             
             <div class="footer">
-                <div class="thank-you">Thank you for your membership!</div>
+                <div class="thank-you">Thank you for your Subscription Payment!</div>
                 <p>This is a computer generated receipt and does not require signature.</p>
                 <p>For any queries, please contact The Indore Keraleeya Samajam</p>
             </div>
