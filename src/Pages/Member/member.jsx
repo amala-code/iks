@@ -501,14 +501,14 @@ const MembershipFlipCard = () => {
                 <div className="member-details">
                   <div className="member-info">
                     <h3>Member Information</h3>
-                    <p><strong>Name:</strong> {userData.name}</p>
-                    <p><strong>ID:</strong> {userData.id}</p>
+                    <p><strong>Name : </strong> {userData.name}</p>
+                    <p><strong>ID : </strong> {userData.id}</p>
                     
                     <p>
-  <strong>Subscription:</strong>{" "}
+  <strong>Subscription (FY {new Date().getFullYear()}-{new Date().getFullYear() + 1}) : </strong>{" "}
   {userData && userData.amount_subscription
-    ? `Paid — ${new Date().getFullYear()}`
-    : `Due — ${new Date().getFullYear()}`}
+    ? `Paid `
+    : `Due `}
 </p>
                     
                     {paymentLoading && (
