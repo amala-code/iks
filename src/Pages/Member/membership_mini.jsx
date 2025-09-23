@@ -249,7 +249,7 @@ const MembershipMini = () => {
                 </div>
                 
                 <div className="input-group">
-                  <label htmlFor="about">Address</label>
+                  <label htmlFor="about">Address<span className="required">*</span></label>
                   <textarea
                     id="about"
                     placeholder="Enter your address"
