@@ -502,7 +502,7 @@ const MembershipFlipCard = () => {
                   <div className="member-info">
                     <h3>Member Information</h3>
                     <p><strong>Name : </strong> {userData.name}</p>
-                    <p><strong>ID : </strong> {userData.id}</p>
+                    <p><strong>Member ID : </strong> {userData.id}</p>
                     
                     <p>
   <strong>Subscription (FY {new Date().getFullYear()}-{new Date().getFullYear() + 1}) : </strong>{" "}
@@ -570,14 +570,14 @@ const MembershipFlipCard = () => {
                     )}
                   </div>
                   
-                  {/* {(!showQR || paymentStatus === 'cancelled' || paymentStatus === 'failed') && paymentStatus !== 'success' && (
+                  {(!showQR || paymentStatus === 'cancelled' || paymentStatus === 'failed') && paymentStatus !== 'success' && (
                     <button
                       onClick={handlePayment}
                       className="primary-button wide"
                     >
                       Proceed to Payment
                     </button>
-                  )} */}
+                  )}
                   
                 </div>
               )}
