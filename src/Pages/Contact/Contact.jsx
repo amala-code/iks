@@ -32,9 +32,9 @@ const Contact = () => {
               <div className="Contact_iconDiv1_text2">
                 <a
                   className="Contact_iconLink"
-                  href="mailto:contact@ikscommunity.org"
+                  href="mailto:indorekeraleeya_samajam@rediffmail.com"
                 >
-indorekeraleeya_samajam@rediffmail.com                </a>
+indorekeraleeya_samajam@rediffmail.com</a>
               </div>
               <div className="Contact_iconDiv1_text3">Send us an email</div>
             </div>
