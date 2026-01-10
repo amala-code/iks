@@ -195,7 +195,7 @@ const Events = () => {
         <div className="Event_subContainer2">
           <div className="Event_subContainer2_div1">
             <h4 className="Event_subcontainer_div1_headtext">
-              Upcoming Events
+              News & Upcoming Events
             </h4>
             {allEvents.length > 0 ? (
               <div className="Event_subContainer2_div1_cardContainer">
