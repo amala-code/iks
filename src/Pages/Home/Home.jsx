@@ -27,6 +27,7 @@ import Home6 from '../../Images/Home6.png';
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import MembershipFlipCard from "../Member/member";
+import FirstTimeModal from "../../Modall";
 
 const Home = () => {
   const [announcementList, setAnnouncementList] = useState([]);
@@ -343,6 +344,7 @@ const Home = () => {
   View Full Gallery
 </NavLink>
         </div>
+<FirstTimeModal />
 
             </>
   );
